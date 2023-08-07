@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # Update the package list and allow insecure repositories
 sudo apt-get update --allow-insecure-repositories
 
@@ -49,10 +47,3 @@ cd ..
 git clone https://github.com/n4xh4ck5/CMSsc4n.git
 git clone https://github.com/Invertebr4do/WiBreak.git
 git clone https://github.com/0301yasiru/LionCub.git
-
-# Print completion message
-echo "All repositories have been cloned and installed successfully!"
-
-sudo chmod +x penetrationtest_setup.sh
-
-sudo ./penetrationtest_setup.sh
