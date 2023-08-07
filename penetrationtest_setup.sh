@@ -1,11 +1,33 @@
+# Add kali linux sources
+sudo add-apt-repository 'deb http://http.kali.org/kali kali-rolling main contrib non-free non-free-firmware'
+sudo add-apt-repository 'deb https://deb.parrot.sh/parrot/ rolling main contrib non-free'
+sudo add-apt-repository 'deb-src https://deb.parrot.sh/parrot/ rolling main contrib non-free'
+sudo add-apt-repository 'deb https://deb.parrot.sh/parrot/ rolling-security main contrib non-free'
+sudo add-apt-repository 'deb-src https://deb.parrot.sh/parrot/ rolling-security main contrib non-free'
+sudo add-apt-repository 'deb http://archive.ubuntu.com/ubuntu/ focal main restricted universe multiverse'
+sudo add-apt-repository 'deb-src http://archive.ubuntu.com/ubuntu/ focal main restricted universe multiverse'
+sudo add-apt-repository 'deb http://archive.ubuntu.com/ubuntu/ focal-updates main restricted universe multiverse'
+sudo add-apt-repository 'deb-src http://archive.ubuntu.com/ubuntu/ focal-updates main restricted universe multiverse'
+sudo add-apt-repository 'deb http://archive.ubuntu.com/ubuntu/ focal-security main restricted universe multiverse'
+sudo add-apt-repository 'deb-src http://archive.ubuntu.com/ubuntu/ focal-security main restricted universe multiverse'
+sudo add-apt-repository 'deb http://archive.ubuntu.com/ubuntu/ focal-backports main restricted universe multiverse'
+sudo add-apt-repository 'deb-src http://archive.ubuntu.com/ubuntu/ focal-backports main restricted universe multiverse'
+sudo add-apt-repository 'deb http://archive.canonical.com/ubuntu focal partner'
+sudo add-apt-repository 'deb-src http://archive.canonical.com/ubuntu focal partner'
+sudo add-apt-repository 'deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports focal main restricted universe multiverse'
+sudo add-apt-repository 'deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports focal-updates main restricted universe multiverse'
+sudo add-apt-repository 'deb [arch=arm64] http://ports.ubuntu.com/ubuntu-ports focal-security main restricted universe multiverse'
+sudo add-apt-repository 'deb [arch=i386,amd64] http://us.archive.ubuntu.com/ubuntu/ focal main restricted universe multiverse'
+sudo add-apt-repository 'deb [arch=i386,amd64] http://us.archive.ubuntu.com/ubuntu/ focal-updates main restricted universe multiverse'
+sudo add-apt-repository 'deb [arch=i386,amd64] http://security.ubuntu.com/ubuntu focal-security main restricted universe multiverse'
+
+
 # Update the package list and allow insecure repositories
 sudo apt-get update --allow-insecure-repositories
 
 # Install kali-linux-everything
 sudo apt-get install kali-linux-everything
 
-# Add kali linux sources
-echo "deb http://http.kali.org/kali kali-rolling main non-free contrib" | sudo tee /etc/apt/sources.list.d/kali.list
 
 # Make the "penetrationtest" directory and move into it
 mkdir -p penetrationtest
