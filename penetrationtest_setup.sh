@@ -1,7 +1,7 @@
-# Add kali linux sources
-sudo add-apt-repository 'deb http://http.kali.org/kali kali-rolling main contrib non-free non-free-firmware'
-sudo add-apt-repository 'deb https://deb.parrot.sh/parrot/ rolling main contrib non-free'
-sudo add-apt-repository 'deb-src https://deb.parrot.sh/parrot/ rolling main contrib non-free'
+# Add kali linux sourc
+deb http://http.kali.org/kali kali-rolling main contrib non-free non-free-firmware'
+deb https://deb.parrot.sh/parrot/ rolling main contrib non-free'
+deb-src https://deb.parrot.sh/parrot/ rolling main contrib non-free'
 sudo add-apt-repository 'deb https://deb.parrot.sh/parrot/ rolling-security main contrib non-free'
 sudo add-apt-repository 'deb-src https://deb.parrot.sh/parrot/ rolling-security main contrib non-free'
 sudo add-apt-repository 'deb http://archive.ubuntu.com/ubuntu/ focal main restricted universe multiverse'
@@ -26,7 +26,7 @@ sudo add-apt-repository 'deb [arch=i386,amd64] http://security.ubuntu.com/ubuntu
 sudo apt-get update --allow-insecure-repositories
 
 # Install kali-linux-everything
-sudo apt-get install kali-linux-everything
+sudo apt-get install kali-linux-default
 
 
 # Make the "penetrationtest" directory and move into it
