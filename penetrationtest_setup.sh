@@ -1,7 +1,7 @@
 # Add kali linux sourc
 sudo add-apt-repository  deb http://http.kali.org/kali kali-rolling main contrib non-free non-free-firmware'
 sudo add-apt-repository  deb https://deb.parrot.sh/parrot/ rolling main contrib non-free'
-deb-src https://deb.parrot.sh/parrot/ rolling main contrib non-free'
+sudo add-apt-repository  deb-src https://deb.parrot.sh/parrot/ rolling main contrib non-free'
 sudo add-apt-repository 'deb https://deb.parrot.sh/parrot/ rolling-security main contrib non-free'
 sudo add-apt-repository 'deb-src https://deb.parrot.sh/parrot/ rolling-security main contrib non-free'
 sudo add-apt-repository 'deb http://archive.ubuntu.com/ubuntu/ focal main restricted universe multiverse'
