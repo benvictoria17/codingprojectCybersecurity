@@ -19,6 +19,7 @@ URL_SCAN_API = 'https://www.virustotal.com/api/v3/urls'
 FILE_SCAN_API = 'https://www.virustotal.com/api/v3/files'
 IP_SCAN_API = 'https://www.virustotal.com/api/v3/ip_addresses/'
 DOMAIN_SCAN_API = 'https://www.virustotal.com/api/v3/domains/'
+FILE_HASH = 'https://www.virustotal.com/api/v3/files/'
 
 # This function computes the SHA-256 hash of a file, a way to uniquely identify it.
 def hash_file(file_path):
@@ -88,6 +89,9 @@ scan_domain_button.pack()
 
 file_button = tk.Button(root, text="Select File to Scan", command=select_file)
 file_button.pack()
+
+file_hash_button = tk.Button(root, text="File Hash", command=lambda: threading.Thread(target=hash_file).start())
+file_hash_button.pack()
 
 # Begins the application, opening the window for interaction.
 root.mainloop()
