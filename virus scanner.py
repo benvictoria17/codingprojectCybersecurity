@@ -13,15 +13,14 @@ import threading
 # hashlib is used for creating a unique code for files, serving as a digital fingerprint.
 import hashlib
 
-# Here, we define keys and addresses to use the VirusTotal service for checking safety.
-API_KEY = 'ba82a809340dc576dcc6e122fe1e7768cd54993959168998fd425965cf3f1408' # Replace with your API key
+# Here, we define keys and addresses to use the VirusTotal service for checking safety.Replace with your API key
+API_KEY = 'ba82a809340dc576dcc6e122fe1e7768cd54993959168998fd425965cf3f1408' 
 
 # This is the base URL for the VirusTotal API.
 URL_SCAN_API = 'https://www.virustotal.com/api/v3/urls' 
 FILE_SCAN_API = 'https://www.virustotal.com/api/v3/files'
 IP_SCAN_API = 'https://www.virustotal.com/api/v3/ip_addresses/'
 DOMAIN_SCAN_API = 'https://www.virustotal.com/api/v3/domains/'
-FILE_HASH_API = 'https://www.virustotal.com/api/v3/files/'
 
 # This function computes the SHA-256 hash of a file, a way to uniquely identify it.
 def hash_file(file_path):
@@ -91,9 +90,6 @@ scan_domain_button.pack() # This packs the button into the window.
 
 select_file_button = tk.Button(root, text="Select File to Scan", command=select_file)# This creates a button for selecting a file to scan.
 select_file_button.pack() # This packs the button into the window.
-
-file_hash_button = tk.Button(root, text="File Hash", command=lambda: threading.Thread(target=hash_file).start()) # This creates a button for computing the hash of a file.
-file_hash_button.pack() # This packs the button into the window.
 
 # Begins the application, opening the window for interaction.
 root.mainloop() # This starts the application.
