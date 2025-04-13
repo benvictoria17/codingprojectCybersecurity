@@ -1,0 +1,165 @@
+{% extends "layout.html" %}
+
+{% block title %}Database Scanner - CyberKidz{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <h1 class="mb-4">Database Security Scanner</h1>
+        
+        <div class="alert alert-info">
+            <h4 class="alert-heading"><i class="fas fa-info-circle me-2"></i> What is a Database Scanner?</h4>
+            <p>A database is where websites and apps store information. A database scanner checks if the database has security problems that could let hackers steal or change the information.</p>
+            <p>This tool will check a database for security issues.</p>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+                <h3 class="mb-0"><i class="fas fa-database me-2"></i> Database Scanner</h3>
+            </div>
+            <div class="card-body">
+                <form id="database-scanner-form" class="scanner-form">
+                    <div class="mb-3">
+                        <label for="db_type" class="form-label">Database Type</label>
+                        <select class="form-select form-select-lg" id="db_type" name="db_type" required>
+                            <option value="" selected disabled>Choose a database type</option>
+                            <option value="mysql">MySQL</option>
+                            <option value="postgresql">PostgreSQL</option>
+                            <option value="mongodb">MongoDB</option>
+                            <option value="redis">Redis</option>
+                            <option value="elasticsearch">Elasticsearch</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="host" class="form-label">Database Host</label>
+                        <input type="text" class="form-control form-control-lg" id="host" name="host" 
+                               placeholder="localhost or db.example.com" required>
+                        <div class="form-text">Enter the hostname or IP address of the database server</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="port" class="form-label">Port (Optional)</label>
+                        <input type="number" class="form-control" id="port" name="port" 
+                               placeholder="3306, 5432, 27017, etc.">
+                        <div class="form-text">Leave empty to use the default port for the selected database type</div>
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="fas fa-search me-2"></i> Scan Database
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="database-scanner-results" class="mb-5"></div>
+
+        <div class="card mb-4">
+            <div class="card-header bg-info">
+                <h3 class="mb-0"><i class="fas fa-shield-alt me-2"></i> What We Check For</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4><i class="fas fa-lock me-2"></i> Security Configuration</h4>
+                        <p>These are settings that control how secure the database is.</p>
+                        <ul>
+                            <li>Authentication requirements</li>
+                            <li>Network access controls</li>
+                            <li>Encryption settings</li>
+                            <li>User permissions</li>
+                            <li>Access logs</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h4><i class="fas fa-bug me-2"></i> Common Vulnerabilities</h4>
+                        <p>These are problems that hackers often look for.</p>
+                        <ul>
+                            <li>Default credentials</li>
+                            <li>Public exposure to internet</li>
+                            <li>SQL injection risks</li>
+                            <li>Outdated database version</li>
+                            <li>Missing security patches</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header bg-warning">
+                <h3 class="mb-0"><i class="fas fa-exclamation-triangle me-2"></i> Database Security Tips</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="tip-box p-3">
+                            <h5><i class="fas fa-lock me-2"></i> Use Strong Passwords</h5>
+                            <p>Never use default database passwords. Create strong, unique passwords for database access.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="tip-box p-3">
+                            <h5><i class="fas fa-network-wired me-2"></i> Limit Network Access</h5>
+                            <p>Don't expose databases directly to the internet. Use firewalls to control who can connect.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <div class="tip-box p-3">
+                            <h5><i class="fas fa-sync me-2"></i> Keep Updated</h5>
+                            <p>Always update your database software to the latest version to fix security holes.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="tip-box p-3">
+                            <h5><i class="fas fa-user-shield me-2"></i> Limit User Permissions</h5>
+                            <p>Give users only the access they need. Don't use admin accounts for everyday tasks.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <img src="https://images.unsplash.com/photo-1614064548016-0b5c13ca2c85" class="card-img-top" alt="Database security concept">
+            <div class="card-body">
+                <h4 class="card-title">Example: Secure vs. Insecure Database</h4>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card bg-success text-white mb-3">
+                            <div class="card-header">Secure Database</div>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush bg-transparent">
+                                    <li class="list-group-item bg-transparent border-light">Strong password requirements</li>
+                                    <li class="list-group-item bg-transparent border-light">Not accessible from internet</li>
+                                    <li class="list-group-item bg-transparent border-light">Encrypted connections (SSL/TLS)</li>
+                                    <li class="list-group-item bg-transparent border-light">Up-to-date version</li>
+                                    <li class="list-group-item bg-transparent border-light">Regular security audits</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card bg-danger text-white mb-3">
+                            <div class="card-header">Insecure Database</div>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush bg-transparent">
+                                    <li class="list-group-item bg-transparent border-light">Default or weak passwords</li>
+                                    <li class="list-group-item bg-transparent border-light">Directly accessible from internet</li>
+                                    <li class="list-group-item bg-transparent border-light">Unencrypted connections</li>
+                                    <li class="list-group-item bg-transparent border-light">Outdated version with known bugs</li>
+                                    <li class="list-group-item bg-transparent border-light">No security monitoring</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

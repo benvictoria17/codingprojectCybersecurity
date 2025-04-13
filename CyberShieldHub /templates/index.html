@@ -1,0 +1,181 @@
+{% extends "layout.html" %}
+
+{% block title %}CyberKidz - Learn About Computer Security{% endblock %}
+
+{% block content %}
+<section class="hero text-center py-5 animate__animated animate__fadeIn">
+    <h1 class="display-4 mb-4">Welcome to CyberKidz!</h1>
+    <p class="lead mb-5">Learn about computer security in a fun and simple way. Protect yourself online!</p>
+    <div class="d-flex justify-content-center gap-3">
+        <a href="#security-tools" class="btn btn-primary btn-lg">
+            <i class="fas fa-tools me-2"></i> Try Security Tools
+        </a>
+        <a href="/education" class="btn btn-outline-secondary btn-lg">
+            <i class="fas fa-graduation-cap me-2"></i> Learn About Security
+        </a>
+    </div>
+</section>
+
+<div class="row my-5">
+    <div class="col-md-6">
+        <div class="card mb-4 bg-dark">
+            <div class="card-body p-4">
+                <h2 class="card-title mb-3">Why Is Cybersecurity Important?</h2>
+                <p class="card-text">Cybersecurity is like having a strong lock on your house. It keeps bad people out and your stuff safe.</p>
+                <p class="card-text">With good cybersecurity, you can:</p>
+                <ul>
+                    <li>Keep your personal information private</li>
+                    <li>Stop people from stealing your accounts</li>
+                    <li>Protect your computer from viruses</li>
+                    <li>Stay safe while using the internet</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b" alt="Cybersecurity protection concept" class="img-fluid rounded shadow">
+    </div>
+</div>
+
+<section id="security-tools" class="my-5">
+    <h2 class="text-center mb-5">Security Tools You Can Use</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <!-- OSINT Tool Card -->
+        <div class="col">
+            <div class="card tool-card h-100">
+                <img src="https://images.unsplash.com/photo-1563452619267-bc16ef6cecec" class="card-img-top" alt="Information gathering concept">
+                <div class="card-body">
+                    <h3 class="card-title">OSINT Information Finder</h3>
+                    <p class="card-text">Find out what information is public about a person, email, or website.</p>
+                    <a href="/osint" class="btn btn-primary">Try It</a>
+                </div>
+            </div>
+        </div>
+        <!-- Website Scanner Card -->
+        <div class="col">
+            <div class="card tool-card h-100">
+                <img src="https://images.unsplash.com/photo-1548092372-0d1bd40894a3" class="card-img-top" alt="Website security concept">
+                <div class="card-body">
+                    <h3 class="card-title">Website Scanner</h3>
+                    <p class="card-text">Check if a website has security problems that hackers could use.</p>
+                    <a href="/website-scanner" class="btn btn-primary">Try It</a>
+                </div>
+            </div>
+        </div>
+        <!-- Server Scanner Card -->
+        <div class="col">
+            <div class="card tool-card h-100">
+                <img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7" class="card-img-top" alt="Server security concept">
+                <div class="card-body">
+                    <h3 class="card-title">Server Scanner</h3>
+                    <p class="card-text">Find out if a server computer has security issues.</p>
+                    <a href="/server-scanner" class="btn btn-primary">Try It</a>
+                </div>
+            </div>
+        </div>
+        <!-- Network Scanner Card -->
+        <div class="col">
+            <div class="card tool-card h-100">
+                <img src="https://images.unsplash.com/photo-1601979142879-ad5896cb0617" class="card-img-top" alt="Network security concept">
+                <div class="card-body">
+                    <h3 class="card-title">Network Scanner</h3>
+                    <p class="card-text">Check if your computer network has open doors that hackers could use.</p>
+                    <a href="/network-scanner" class="btn btn-primary">Try It</a>
+                </div>
+            </div>
+        </div>
+        <!-- Database Scanner Card -->
+        <div class="col">
+            <div class="card tool-card h-100">
+                <img src="https://images.unsplash.com/photo-1614064548016-0b5c13ca2c85" class="card-img-top" alt="Database security concept">
+                <div class="card-body">
+                    <h3 class="card-title">Database Scanner</h3>
+                    <p class="card-text">Find security problems in databases where information is stored.</p>
+                    <a href="/database-scanner" class="btn btn-primary">Try It</a>
+                </div>
+            </div>
+        </div>
+        <!-- Google Dorking Card -->
+        <div class="col">
+            <div class="card tool-card h-100">
+                <img src="https://images.unsplash.com/photo-1576765608622-067973a79f53" class="card-img-top" alt="Search security concept">
+                <div class="card-body">
+                    <h3 class="card-title">Google Dorking Tool</h3>
+                    <p class="card-text">Learn how to find secret information using Google in a special way.</p>
+                    <a href="/google-dorking" class="btn btn-primary">Try It</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="learn-section my-5 p-5 bg-dark rounded">
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            <h2 class="mb-4">Learn About Cyber Attacks</h2>
+            <p>Cyber attacks are tricks that bad people use to steal information or break computers. Learning about them helps you stay safe.</p>
+            <div class="d-grid gap-2 d-md-block">
+                <a href="/education/phishing" class="btn btn-outline-primary me-2 mb-2">
+                    <i class="fas fa-fish me-2"></i> Phishing Emails
+                </a>
+                <a href="/education/passwords" class="btn btn-outline-primary me-2 mb-2">
+                    <i class="fas fa-key me-2"></i> Password Security
+                </a>
+                <a href="/education/exposed-apis" class="btn btn-outline-primary me-2 mb-2">
+                    <i class="fas fa-plug me-2"></i> Exposed APIs
+                </a>
+                <a href="/education/s3-configs" class="btn btn-outline-primary me-2 mb-2">
+                    <i class="fas fa-database me-2"></i> S3 Bucket Security
+                </a>
+            </div>
+        </div>
+        <div class="col-md-6 mt-4 mt-md-0">
+            <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952" alt="Learning about cybersecurity" class="img-fluid rounded shadow">
+        </div>
+    </div>
+</section>
+
+<section class="stats-section my-5">
+    <h2 class="text-center mb-5">Why Cybersecurity Matters</h2>
+    <div class="row text-center">
+        <div class="col-md-3">
+            <div class="stat-circle rounded-circle bg-primary d-flex align-items-center justify-content-center mx-auto" style="width: 150px; height: 150px;">
+                <div>
+                    <h3 class="mb-0">300%</h3>
+                    <p class="mb-0">Increase in cyber attacks since 2020</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stat-circle rounded-circle bg-danger d-flex align-items-center justify-content-center mx-auto" style="width: 150px; height: 150px;">
+                <div>
+                    <h3 class="mb-0">80%</h3>
+                    <p class="mb-0">Of attacks use weak passwords</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stat-circle rounded-circle bg-warning d-flex align-items-center justify-content-center mx-auto" style="width: 150px; height: 150px;">
+                <div>
+                    <h3 class="mb-0">95%</h3>
+                    <p class="mb-0">Of breaches start with human error</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="stat-circle rounded-circle bg-success d-flex align-items-center justify-content-center mx-auto" style="width: 150px; height: 150px;">
+                <div>
+                    <h3 class="mb-0">60%</h3>
+                    <p class="mb-0">Fewer attacks with good security</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section text-center p-5 my-5 bg-dark rounded">
+    <h2 class="mb-4">Ready to Learn More?</h2>
+    <p class="lead mb-4">Start using our tools and learning about cybersecurity today!</p>
+    <a href="/education" class="btn btn-lg btn-primary">Begin Your Security Journey</a>
+</section>
+{% endblock %}

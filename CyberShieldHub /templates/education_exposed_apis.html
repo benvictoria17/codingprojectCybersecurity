@@ -1,0 +1,429 @@
+{% extends "layout.html" %}
+
+{% block title %}Learn About Exposed APIs - CyberKidz{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-9 mx-auto">
+        <h1 class="mb-4">Learn About Exposed APIs and Ports</h1>
+        
+        <div class="alert alert-info mb-4">
+            <h4 class="alert-heading"><i class="fas fa-info-circle me-2"></i> What are APIs and Ports?</h4>
+            <p>APIs (Application Programming Interfaces) are ways for different programs to talk to each other. Think of them as special doors that let apps share information.</p>
+            <p>Ports are like numbered doors on a computer. Each door (port) lets different kinds of information in and out. For example, websites usually use port 80 or 443.</p>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-md-6">
+                <img src="https://images.unsplash.com/photo-1585435516476-bd92c7d4d9b2" alt="Network connections concept" class="img-fluid rounded shadow mb-3">
+            </div>
+            <div class="col-md-6">
+                <div class="card bg-dark h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">Why are Exposed APIs and Ports Dangerous?</h3>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item bg-transparent">Hackers can access private information</li>
+                            <li class="list-group-item bg-transparent">They can take control of computers or websites</li>
+                            <li class="list-group-item bg-transparent">They might find ways to break into other systems</li>
+                            <li class="list-group-item bg-transparent">They can steal data or change information</li>
+                            <li class="list-group-item bg-transparent">They can use your computer for bad things</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-5">
+            <div class="card-header bg-primary">
+                <h3 class="mb-0"><i class="fas fa-plug me-2"></i> Understanding APIs</h3>
+            </div>
+            <div class="card-body">
+                <h4>What is an API?</h4>
+                <p>Think of an API like a waiter at a restaurant:</p>
+                
+                <div class="row align-items-center mb-4">
+                    <div class="col-md-6">
+                        <div class="definition-box p-3">
+                            <ol>
+                                <li>You (the customer) don't go into the kitchen to get your food</li>
+                                <li>Instead, you give your order to the waiter</li>
+                                <li>The waiter takes your order to the kitchen</li>
+                                <li>The kitchen makes your food</li>
+                                <li>The waiter brings the food back to you</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <i class="fas fa-utensils fa-5x text-primary mb-3"></i>
+                        <h5>Restaurant Analogy</h5>
+                    </div>
+                </div>
+                
+                <p>Similarly, with APIs:</p>
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div class="definition-box p-3">
+                            <ol>
+                                <li>Your app wants information from another program</li>
+                                <li>Your app makes a request to the API</li>
+                                <li>The API takes the request to the program</li>
+                                <li>The program gets or processes the information</li>
+                                <li>The API returns the information to your app</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <i class="fas fa-exchange-alt fa-5x text-primary mb-3"></i>
+                        <h5>API Communication</h5>
+                    </div>
+                </div>
+                
+                <div class="example-box p-3 mt-4">
+                    <h5>Example: Weather App API</h5>
+                    <p>When you use a weather app on your phone:</p>
+                    <ol>
+                        <li>Your app asks a weather API for the forecast</li>
+                        <li>The API gets the information from weather servers</li>
+                        <li>The API sends back the weather forecast</li>
+                        <li>Your app shows you if it will rain tomorrow</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-5">
+            <div class="card-header bg-primary">
+                <h3 class="mb-0"><i class="fas fa-door-open me-2"></i> Understanding Ports</h3>
+            </div>
+            <div class="card-body">
+                <h4>What are Ports?</h4>
+                <p>Think of ports like different doors to a building:</p>
+                
+                <div class="row mb-4">
+                    <div class="col-md-8">
+                        <div class="definition-box p-3">
+                            <p>A computer has 65,535 possible ports (doors). Each port can be:</p>
+                            <ul>
+                                <li><strong>Open:</strong> The door is unlocked and accepting connections</li>
+                                <li><strong>Closed:</strong> The door exists but is locked</li>
+                                <li><strong>Filtered:</strong> The door is hidden behind a security guard (firewall)</li>
+                            </ul>
+                            <p>Each service on your computer uses specific ports:</p>
+                            <ul>
+                                <li>Websites (HTTP): Port 80</li>
+                                <li>Secure websites (HTTPS): Port 443</li>
+                                <li>Email (SMTP): Port 25</li>
+                                <li>File transfers (FTP): Port 21</li>
+                                <li>Remote access (SSH): Port 22</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center d-flex align-items-center justify-content-center">
+                        <div>
+                            <i class="fas fa-building fa-5x text-primary mb-3"></i>
+                            <h5>Computer "Building"</h5>
+                            <p>Each door (port) serves a different purpose</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="example-box p-3 mt-4">
+                    <h5>Example: Web Server</h5>
+                    <p>When you visit a website:</p>
+                    <ol>
+                        <li>Your browser tries to connect to the website's server on port 80 (HTTP) or 443 (HTTPS)</li>
+                        <li>If that port is open on the server, you can see the website</li>
+                        <li>If that port is closed, you'll get an error message</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-5">
+            <div class="card-header bg-danger text-white">
+                <h3 class="mb-0"><i class="fas fa-exclamation-triangle me-2"></i> The Dangers of Exposed APIs and Ports</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="warning-box p-3 h-100">
+                            <h4><i class="fas fa-key me-2"></i> Exposed API Keys</h4>
+                            <p>API keys are like special passwords that let programs use APIs. If a hacker finds your API key, they can use the API as if they were you, which might cost money or leak private data.</p>
+                            <div class="example-box p-3">
+                                <h6>Example: JavaScript Code with Exposed API Key</h6>
+                                <pre><code>// UNSAFE CODE - API key visible to everyone
+const weatherApiKey = "abc123secret456key789";
+
+function getWeather() {
+  fetch(`https://weather-api.com/forecast?key=${weatherApiKey}&city=London`)
+    .then(response => response.json())
+    .then(data => showWeather(data));
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="warning-box p-3 h-100">
+                            <h4><i class="fas fa-bug me-2"></i> Insecure API Endpoints</h4>
+                            <p>Some APIs don't check if you're allowed to see certain information. A hacker might be able to see other people's private information just by changing a number in the web address.</p>
+                            <div class="example-box p-3">
+                                <h6>Example: Insecure API</h6>
+                                <p>If you can see your account at:</p>
+                                <code>https://example.com/api/user/1234</code>
+                                <p>A hacker might try:</p>
+                                <code>https://example.com/api/user/1235</code>
+                                <p>And see someone else's account!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="warning-box p-3 h-100">
+                            <h4><i class="fas fa-door-open me-2"></i> Unnecessary Open Ports</h4>
+                            <p>Every open port is like an open door that hackers can try to get through. If ports are open that don't need to be, hackers have more ways to break in.</p>
+                            <div class="example-box p-3">
+                                <h6>Example: Danger of Open Ports</h6>
+                                <p>If port 3389 (Remote Desktop) is open to the internet, hackers can try thousands of passwords to get into your computer remotely.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="warning-box p-3 h-100">
+                            <h4><i class="fas fa-database me-2"></i> Exposed Database Ports</h4>
+                            <p>Databases should never be directly connected to the internet. If database ports (like 3306 for MySQL) are open, hackers might be able to steal all your data.</p>
+                            <div class="example-box p-3">
+                                <h6>Example: MongoDB Data Breach</h6>
+                                <p>Many companies have had their data stolen because they accidentally left database ports open to the internet without passwords.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-5">
+            <div class="card-header bg-primary">
+                <h3 class="mb-0"><i class="fas fa-code me-2"></i> How APIs Work: The Technical Side</h3>
+            </div>
+            <div class="card-body">
+                <p>Let's look at how APIs work behind the scenes:</p>
+                
+                <div class="row mb-4">
+                    <div class="col-md-12">
+                        <h5>Example: A Simple Weather API Request in JavaScript</h5>
+                        <pre><code>// This is a simplified example of how a weather API might work
+// In a real app, the API key would be kept secure on a server
+
+// Function to get weather for a city
+function getWeatherForCity(city) {
+  // The API endpoint (URL)
+  const apiUrl = `https://api.weatherapp.com/forecast?city=${city}&units=metric`;
+  
+  // API key for authentication
+  const apiKey = "your_api_key_here";
+  
+  // Make a request to the API with the key in headers
+  fetch(apiUrl, {
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${apiKey}`,
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(response => {
+    // Check if the request was successful
+    if (!response.ok) {
+      throw new Error('Weather data not available');
+    }
+    return response.json(); // Parse the JSON data
+  })
+  .then(data => {
+    // We got the data! Now we can use it
+    console.log("Weather data:", data);
+    
+    // Display the temperature
+    const temperature = data.current.temperature;
+    document.getElementById('weather-result').textContent = 
+      `The temperature in ${city} is ${temperature}°C`;
+  })
+  .catch(error => {
+    // Handle any errors
+    console.error('Error fetching weather:', error);
+    document.getElementById('weather-result').textContent = 
+      `Sorry, couldn't get weather for ${city}`;
+  });
+}
+
+// Call the function when button is clicked
+document.getElementById('weather-button').addEventListener('click', function() {
+  const city = document.getElementById('city-input').value;
+  getWeatherForCity(city);
+});</code></pre>
+                    </div>
+                </div>
+                
+                <div class="alert alert-warning">
+                    <h4 class="alert-heading">Security Risk!</h4>
+                    <p>If API keys are included in JavaScript code on a website, anyone can view the source code and find your API key! This is why API keys should be kept on a server, not in front-end code.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-5">
+            <div class="card-header bg-success">
+                <h3 class="mb-0"><i class="fas fa-shield-alt me-2"></i> How to Stay Safe</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="tip-box p-3 h-100">
+                            <h4><i class="fas fa-lock me-2"></i> Use a Firewall</h4>
+                            <p>A firewall controls which ports are open and who can connect to them. Make sure your computer's firewall is turned on.</p>
+                            <div class="example-box p-3">
+                                <p>In Windows, check your firewall in the Control Panel.</p>
+                                <p>On a Mac, check Security & Privacy in System Preferences.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="tip-box p-3 h-100">
+                            <h4><i class="fas fa-wifi me-2"></i> Secure Your Home Network</h4>
+                            <p>Make sure your home Wi-Fi has a strong password and uses WPA2 or WPA3 encryption.</p>
+                            <div class="example-box p-3">
+                                <p>Log in to your router (often at 192.168.1.1) and check the wireless security settings.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="tip-box p-3 h-100">
+                            <h4><i class="fas fa-download me-2"></i> Only Download Apps from Trusted Sources</h4>
+                            <p>Some apps might open ports on your computer without telling you. Only download apps from official app stores or trusted websites.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="tip-box p-3 h-100">
+                            <h4><i class="fas fa-code me-2"></i> For Young Developers</h4>
+                            <p>If you're learning to code and using APIs:</p>
+                            <ul>
+                                <li>Never put API keys in code that others can see</li>
+                                <li>Use environment variables or secure storage for keys</li>
+                                <li>Check the documentation of each API for security best practices</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-5">
+            <div class="card-header bg-primary text-white">
+                <h3 class="mb-0"><i class="fas fa-graduation-cap me-2"></i> APIs and Ports Quiz</h3>
+            </div>
+            <div class="card-body">
+                <p>Test what you've learned about APIs and ports with this quiz!</p>
+                
+                <form class="quiz-form" data-quiz-id="apis" data-correct-answers='{"q1": "a", "q2": "c", "q3": "b", "q4": "a", "q5": "c"}'>
+                    <div class="quiz-question mb-4">
+                        <p><strong>1. What is an API?</strong></p>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="q1" id="q1a" value="a">
+                            <label class="form-check-label" for="q1a">A way for different programs to talk to each other</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="q1" id="q1b" value="b">
+                            <label class="form-check-label" for="q1b">A type of computer virus</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="q1" id="q1c" value="c">
+                            <label class="form-check-label" for="q1c">A company that makes computer parts</label>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question mb-4">
+                        <p><strong>2. What are ports on a computer?</strong></p>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="q2" id="q2a" value="a">
+                            <label class="form-check-label" for="q2a">Physical plugs where you connect cables</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="q2" id="q2b" value="b">
+                            <label class="form-check-label" for="q2b">Software that protects your computer</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="q2" id="q2c" value="c">
+                            <label class="form-check-label" for="q2c">Numbered connection points that allow different services to communicate</label>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question mb-4">
+                        <p><strong>3. Why are open ports a security risk?</strong></p>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="q3" id="q3a" value="a">
+                            <label class="form-check-label" for="q3a">They make your computer run slower</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="q3" id="q3b" value="b">
+                            <label class="form-check-label" for="q3b">They can give hackers a way to access your system</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="q3" id="q3c" value="c">
+                            <label class="form-check-label" for="q3c">They use up too much electricity</label>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question mb-4">
+                        <p><strong>4. What is an API key?</strong></p>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="q4" id="q4a" value="a">
+                            <label class="form-check-label" for="q4a">A special code that gives you permission to use an API</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="q4" id="q4b" value="b">
+                            <label class="form-check-label" for="q4b">A physical key that unlocks a computer</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="q4" id="q4c" value="c">
+                            <label class="form-check-label" for="q4c">The main feature of an API</label>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question mb-4">
+                        <p><strong>5. Which port is typically used for secure websites (HTTPS)?</strong></p>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="q5" id="q5a" value="a">
+                            <label class="form-check-label" for="q5a">Port 21</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="q5" id="q5b" value="b">
+                            <label class="form-check-label" for="q5b">Port 80</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="q5" id="q5c" value="c">
+                            <label class="form-check-label" for="q5c">Port 443</label>
+                        </div>
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary">Check Answers</button>
+                    </div>
+                </form>
+                
+                <div id="quiz-result-apis" class="mt-4"></div>
+                <div id="quiz-feedback-apis" class="mt-4"></div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-between mb-5">
+            <a href="/education/passwords" class="btn btn-outline-primary">
+                <i class="fas fa-arrow-left me-2"></i> Previous: Passwords
+            </a>
+            <a href="/education/s3-configs" class="btn btn-primary">
+                Next: S3 Bucket Security <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
