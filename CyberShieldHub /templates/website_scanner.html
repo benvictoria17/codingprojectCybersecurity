@@ -1,0 +1,143 @@
+{% extends "layout.html" %}
+
+{% block title %}Website Scanner - CyberKidz{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <h1 class="mb-4">Website Security Scanner</h1>
+        
+        <div class="alert alert-info">
+            <h4 class="alert-heading"><i class="fas fa-info-circle me-2"></i> What is a Website Scanner?</h4>
+            <p>A website scanner checks if a website has security problems that hackers could use to steal information or break the website.</p>
+            <p>This tool will check a website for common security issues.</p>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+                <h3 class="mb-0"><i class="fas fa-globe me-2"></i> Website Scanner</h3>
+            </div>
+            <div class="card-body">
+                <form id="website-scanner-form" class="scanner-form">
+                    <div class="mb-3">
+                        <label for="url" class="form-label">Website URL</label>
+                        <input type="url" class="form-control form-control-lg" id="url" name="url" 
+                               placeholder="https://example.com" required>
+                        <div class="form-text">Enter the full website address starting with http:// or https://</div>
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="fas fa-search me-2"></i> Scan Website
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="website-scanner-results" class="mb-5"></div>
+
+        <div class="card mb-4">
+            <div class="card-header bg-info">
+                <h3 class="mb-0"><i class="fas fa-shield-alt me-2"></i> What We Check For</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4><i class="fas fa-lock me-2"></i> Security Headers</h4>
+                        <p>These are special instructions that tell your browser how to handle the website securely.</p>
+                        <ul>
+                            <li>HTTPS - Secure connection</li>
+                            <li>Content-Security-Policy</li>
+                            <li>X-XSS-Protection</li>
+                            <li>X-Content-Type-Options</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h4><i class="fas fa-bug me-2"></i> Common Vulnerabilities</h4>
+                        <p>These are security holes that hackers often try to use.</p>
+                        <ul>
+                            <li>Cross-Site Scripting (XSS)</li>
+                            <li>Outdated software</li>
+                            <li>Open ports</li>
+                            <li>Server information leaks</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header bg-warning">
+                <h3 class="mb-0"><i class="fas fa-exclamation-triangle me-2"></i> Website Safety Tips</h3>
+            </div>
+            <div class="card-body">
+                <p>When visiting websites, remember these safety tips:</p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="tip-box p-3">
+                            <h5><i class="fas fa-lock me-2"></i> Check for HTTPS</h5>
+                            <p>Look for a padlock icon in your browser's address bar. This means the website uses encryption to protect your information.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="tip-box p-3">
+                            <h5><i class="fas fa-spell-check me-2"></i> Check the URL</h5>
+                            <p>Make sure the website address is spelled correctly. Hackers often use similar-looking URLs to trick you.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <div class="tip-box p-3">
+                            <h5><i class="fas fa-download me-2"></i> Be Careful What You Download</h5>
+                            <p>Only download files from websites you trust. Files can contain viruses that can harm your computer.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="tip-box p-3">
+                            <h5><i class="fas fa-eye-slash me-2"></i> Use Private Browsing</h5>
+                            <p>For sensitive activities like banking, use your browser's private or incognito mode and close the window when you're done.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <img src="https://images.unsplash.com/photo-1618060932014-4deda4932554" class="card-img-top" alt="Website security concept">
+            <div class="card-body">
+                <h4 class="card-title">Example: Secure vs. Insecure Website</h4>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card bg-success text-white mb-3">
+                            <div class="card-header">Secure Website</div>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush bg-transparent">
+                                    <li class="list-group-item bg-transparent border-light">Uses HTTPS (padlock icon)</li>
+                                    <li class="list-group-item bg-transparent border-light">Proper security headers</li>
+                                    <li class="list-group-item bg-transparent border-light">Updated software</li>
+                                    <li class="list-group-item bg-transparent border-light">Privacy policy available</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card bg-danger text-white mb-3">
+                            <div class="card-header">Insecure Website</div>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush bg-transparent">
+                                    <li class="list-group-item bg-transparent border-light">Uses HTTP (no padlock)</li>
+                                    <li class="list-group-item bg-transparent border-light">Missing security headers</li>
+                                    <li class="list-group-item bg-transparent border-light">Outdated software</li>
+                                    <li class="list-group-item bg-transparent border-light">No privacy policy</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,197 @@
+{% extends "layout.html" %}
+
+{% block title %}Cloud Services Scanner - CyberKidz{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <h1 class="mb-4">Cloud Services Security Scanner</h1>
+        
+        <div class="alert alert-info">
+            <h4 class="alert-heading"><i class="fas fa-info-circle me-2"></i> What is a Cloud Services Scanner?</h4>
+            <p>Cloud services are programs and storage that run on computers far away that you access through the internet. A cloud scanner checks if your cloud services have security problems.</p>
+            <p>This tool will check common cloud services for security issues.</p>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+                <h3 class="mb-0"><i class="fas fa-cloud me-2"></i> Cloud Services Scanner</h3>
+            </div>
+            <div class="card-body">
+                <form id="cloud-scanner-form" class="scanner-form">
+                    <div class="mb-3">
+                        <label for="cloud_provider" class="form-label">Cloud Provider</label>
+                        <select class="form-select form-select-lg" id="cloud_provider" name="cloud_provider" required>
+                            <option value="" selected disabled>Choose a cloud provider</option>
+                            <option value="aws">Amazon Web Services (AWS)</option>
+                            <option value="azure">Microsoft Azure</option>
+                            <option value="gcp">Google Cloud Platform</option>
+                            <option value="digital_ocean">Digital Ocean</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="resource_type" class="form-label">Resource Type</label>
+                        <select class="form-select form-select-lg" id="resource_type" name="resource_type" required>
+                            <option value="" selected disabled>Choose a resource type</option>
+                            <option value="storage">Storage (S3, Blob Storage)</option>
+                            <option value="compute">Compute (EC2, VM)</option>
+                            <option value="database">Database (RDS, Cosmos DB)</option>
+                            <option value="serverless">Serverless (Lambda, Functions)</option>
+                            <option value="iam">Identity and Access (IAM)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="fas fa-search me-2"></i> Scan Cloud Services
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="cloud-scanner-results" class="mb-5"></div>
+
+        <div class="card mb-4">
+            <div class="card-header bg-info">
+                <h3 class="mb-0"><i class="fas fa-shield-alt me-2"></i> What We Check For</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4><i class="fas fa-cloud-upload-alt me-2"></i> Storage Security</h4>
+                        <p>For cloud storage services like S3 buckets and Blob Storage.</p>
+                        <ul>
+                            <li>Public access settings</li>
+                            <li>Proper access controls</li>
+                            <li>Encryption settings</li>
+                            <li>Logging and monitoring</li>
+                            <li>Versioning configuration</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h4><i class="fas fa-users-cog me-2"></i> Access Control</h4>
+                        <p>For identity and access management services.</p>
+                        <ul>
+                            <li>Over-privileged accounts</li>
+                            <li>Password policies</li>
+                            <li>Multi-factor authentication</li>
+                            <li>Service account security</li>
+                            <li>Unused credentials</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <h4><i class="fas fa-server me-2"></i> Compute Security</h4>
+                        <p>For virtual machines and compute services.</p>
+                        <ul>
+                            <li>Security group settings</li>
+                            <li>Public IP exposure</li>
+                            <li>Operating system updates</li>
+                            <li>Disk encryption</li>
+                            <li>Network configuration</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h4><i class="fas fa-database me-2"></i> Database Security</h4>
+                        <p>For cloud database services.</p>
+                        <ul>
+                            <li>Public access settings</li>
+                            <li>Encryption configuration</li>
+                            <li>Backup policies</li>
+                            <li>Authentication methods</li>
+                            <li>Network security</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header bg-warning">
+                <h3 class="mb-0"><i class="fas fa-exclamation-triangle me-2"></i> Cloud Security Tips</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="tip-box p-3">
+                            <h5><i class="fas fa-user-lock me-2"></i> Use The Principle of Least Privilege</h5>
+                            <p>Give users and programs only the permissions they need to do their job, nothing more.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="tip-box p-3">
+                            <h5><i class="fas fa-shield-alt me-2"></i> Enable Multi-Factor Authentication</h5>
+                            <p>Require a second verification step (like a text message code) for signing in to cloud accounts.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <div class="tip-box p-3">
+                            <h5><i class="fas fa-lock me-2"></i> Always Encrypt Sensitive Data</h5>
+                            <p>Use encryption for all sensitive data stored in the cloud, especially personal information.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="tip-box p-3">
+                            <h5><i class="fas fa-eye me-2"></i> Enable Monitoring and Logging</h5>
+                            <p>Turn on security logging so you can see who accessed your cloud resources and what they did.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <img src="https://images.unsplash.com/photo-1601979142879-ad5896cb0617" class="card-img-top" alt="Cloud computing security concept">
+            <div class="card-body">
+                <h4 class="card-title">Example: S3 Bucket Security Issues</h4>
+                <p>Amazon S3 buckets are often misconfigured. Here's what can go wrong:</p>
+                
+                <div class="example-box p-3 mb-3">
+                    <h5>S3 Bucket with Dangerous Settings:</h5>
+                    <pre><code>{
+  "BucketName": "company-data",
+  "PublicAccessBlock": false,
+  "ObjectACL": "public-read",
+  "Versioning": "Disabled",
+  "ServerSideEncryption": "Disabled",
+  "AccessLogs": "Disabled"
+}</code></pre>
+                    <p class="mt-2"><strong>Problems:</strong></p>
+                    <ul>
+                        <li>Public access is not blocked</li>
+                        <li>Objects can be read by anyone</li>
+                        <li>Versioning is turned off</li>
+                        <li>Encryption is not enabled</li>
+                        <li>Access logging is off</li>
+                    </ul>
+                </div>
+                
+                <div class="example-box p-3">
+                    <h5>Secure S3 Bucket Configuration:</h5>
+                    <pre><code>{
+  "BucketName": "company-data-secure",
+  "PublicAccessBlock": true,
+  "ObjectACL": "private",
+  "Versioning": "Enabled",
+  "ServerSideEncryption": "AES-256",
+  "AccessLogs": "Enabled"
+}</code></pre>
+                    <p class="mt-2"><strong>Good practices:</strong></p>
+                    <ul>
+                        <li>Public access is blocked</li>
+                        <li>Objects are private by default</li>
+                        <li>Versioning is enabled to recover from accidental changes</li>
+                        <li>Encryption is enabled to protect data</li>
+                        <li>Access logging is on to track who accessed what</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

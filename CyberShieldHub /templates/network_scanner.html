@@ -1,0 +1,164 @@
+{% extends "layout.html" %}
+
+{% block title %}Network Scanner - CyberKidz{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <h1 class="mb-4">Network Security Scanner</h1>
+        
+        <div class="alert alert-info">
+            <h4 class="alert-heading"><i class="fas fa-info-circle me-2"></i> What is a Network Scanner?</h4>
+            <p>A network scanner checks your computer network for security problems. It finds devices connected to your network and checks if they have open ports or vulnerabilities.</p>
+            <p>This tool will help you find security issues in your network.</p>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+                <h3 class="mb-0"><i class="fas fa-network-wired me-2"></i> Network Scanner</h3>
+            </div>
+            <div class="card-body">
+                <form id="network-scanner-form" class="scanner-form">
+                    <div class="mb-3">
+                        <label for="target" class="form-label">Network Target</label>
+                        <input type="text" class="form-control form-control-lg" id="target" name="target" 
+                               placeholder="192.168.1.0/24 or 10.0.0.1" required>
+                        <div class="form-text">Enter a network range (like 192.168.1.0/24) or a single IP address</div>
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="fas fa-search me-2"></i> Scan Network
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="network-scanner-results" class="mb-5"></div>
+
+        <div class="card mb-4">
+            <div class="card-header bg-info">
+                <h3 class="mb-0"><i class="fas fa-shield-alt me-2"></i> What We Check For</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4><i class="fas fa-laptop me-2"></i> Devices on Your Network</h4>
+                        <p>We find all the devices connected to your network.</p>
+                        <ul>
+                            <li>Computers</li>
+                            <li>Phones and tablets</li>
+                            <li>Smart home devices</li>
+                            <li>Printers</li>
+                            <li>Routers and modems</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h4><i class="fas fa-bug me-2"></i> Security Issues</h4>
+                        <p>We look for common security problems in your network.</p>
+                        <ul>
+                            <li>Open ports that shouldn't be accessible</li>
+                            <li>Outdated device firmware</li>
+                            <li>Weak encryption</li>
+                            <li>Unauthorized devices</li>
+                            <li>Default passwords</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header bg-warning">
+                <h3 class="mb-0"><i class="fas fa-exclamation-triangle me-2"></i> Network Security Tips</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="tip-box p-3">
+                            <h5><i class="fas fa-wifi me-2"></i> Secure Your Wi-Fi</h5>
+                            <p>Use WPA3 or WPA2 encryption and a strong password for your Wi-Fi network. Never use open Wi-Fi without a password.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="tip-box p-3">
+                            <h5><i class="fas fa-sync me-2"></i> Update Device Firmware</h5>
+                            <p>Keep all your network devices (routers, modems, smart devices) updated with the latest firmware.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <div class="tip-box p-3">
+                            <h5><i class="fas fa-user-check me-2"></i> Check Connected Devices</h5>
+                            <p>Regularly check what devices are connected to your network. If you see something you don't recognize, investigate it.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="tip-box p-3">
+                            <h5><i class="fas fa-network-wired me-2"></i> Separate Guest Network</h5>
+                            <p>If possible, set up a separate guest Wi-Fi network for visitors so they can't access your main network.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <img src="https://images.unsplash.com/photo-1585435516476-bd92c7d4d9b2" class="card-img-top" alt="Network security concept">
+            <div class="card-body">
+                <h4 class="card-title">Example: Network Scan Results</h4>
+                <p>Here's what a network scan might find:</p>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Device</th>
+                                <th>IP Address</th>
+                                <th>Open Ports</th>
+                                <th>Risk Level</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table-success">
+                                <td>Router</td>
+                                <td>192.168.1.1</td>
+                                <td>80 (HTTP), 443 (HTTPS)</td>
+                                <td>Low</td>
+                            </tr>
+                            <tr class="table-warning">
+                                <td>Smart TV</td>
+                                <td>192.168.1.5</td>
+                                <td>8008 (HTTP), 8009 (Cast)</td>
+                                <td>Medium</td>
+                            </tr>
+                            <tr class="table-danger">
+                                <td>Printer</td>
+                                <td>192.168.1.10</td>
+                                <td>21 (FTP), 23 (Telnet), 80 (HTTP), 9100 (Print)</td>
+                                <td>High</td>
+                            </tr>
+                            <tr class="table-success">
+                                <td>Laptop</td>
+                                <td>192.168.1.15</td>
+                                <td>No open ports</td>
+                                <td>Low</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mt-3">
+                    <p><strong>Risk Explanation:</strong></p>
+                    <ul>
+                        <li><strong>Router:</strong> Normal ports for admin interface, firmware is up to date</li>
+                        <li><strong>Smart TV:</strong> Has some open ports for streaming, but firmware is outdated</li>
+                        <li><strong>Printer:</strong> Has dangerous ports open (21, 23) that use default passwords</li>
+                        <li><strong>Laptop:</strong> Good security, no unnecessary ports open</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

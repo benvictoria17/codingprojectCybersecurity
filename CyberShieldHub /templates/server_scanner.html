@@ -1,0 +1,156 @@
+{% extends "layout.html" %}
+
+{% block title %}Server Scanner - CyberKidz{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <h1 class="mb-4">Server Security Scanner</h1>
+        
+        <div class="alert alert-info">
+            <h4 class="alert-heading"><i class="fas fa-info-circle me-2"></i> What is a Server Scanner?</h4>
+            <p>A server is a special computer that stores websites and apps. A server scanner checks if this computer has security problems.</p>
+            <p>This tool will scan a server for common security issues and open ports.</p>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+                <h3 class="mb-0"><i class="fas fa-server me-2"></i> Server Scanner</h3>
+            </div>
+            <div class="card-body">
+                <form id="server-scanner-form" class="scanner-form">
+                    <div class="mb-3">
+                        <label for="hostname" class="form-label">Server Hostname or IP Address</label>
+                        <input type="text" class="form-control form-control-lg" id="hostname" name="hostname" 
+                               placeholder="example.com or 192.168.1.1" required>
+                        <div class="form-text">Enter the server's domain name or IP address</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="port" class="form-label">Port (Optional)</label>
+                        <input type="number" class="form-control" id="port" name="port" 
+                               placeholder="80, 443, 22, etc.">
+                        <div class="form-text">Leave empty to scan common ports, or enter a specific port number</div>
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="fas fa-search me-2"></i> Scan Server
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="server-scanner-results" class="mb-5"></div>
+
+        <div class="card mb-4">
+            <div class="card-header bg-info">
+                <h3 class="mb-0"><i class="fas fa-shield-alt me-2"></i> What We Check For</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4><i class="fas fa-door-open me-2"></i> Open Ports</h4>
+                        <p>Ports are like doors on a server. Each door lets different kinds of information in and out.</p>
+                        <ul>
+                            <li>Port 80 - Website (HTTP)</li>
+                            <li>Port 443 - Secure Website (HTTPS)</li>
+                            <li>Port 22 - SSH (Remote Access)</li>
+                            <li>Port 21 - FTP (File Transfer)</li>
+                            <li>Port 3306 - MySQL Database</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h4><i class="fas fa-bug me-2"></i> Security Issues</h4>
+                        <p>These are problems that could let hackers get into the server.</p>
+                        <ul>
+                            <li>Default passwords</li>
+                            <li>Outdated software</li>
+                            <li>Misconfigured services</li>
+                            <li>Unnecessary open ports</li>
+                            <li>Missing security patches</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header bg-warning">
+                <h3 class="mb-0"><i class="fas fa-exclamation-triangle me-2"></i> Server Security Tips</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="tip-box p-3">
+                            <h5><i class="fas fa-lock me-2"></i> Use Strong Passwords</h5>
+                            <p>Never use default or simple passwords for server access. Create strong, unique passwords.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="tip-box p-3">
+                            <h5><i class="fas fa-shield-alt me-2"></i> Keep Software Updated</h5>
+                            <p>Always update your server software to the latest version to fix security holes.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <div class="tip-box p-3">
+                            <h5><i class="fas fa-door-closed me-2"></i> Close Unnecessary Ports</h5>
+                            <p>Only keep open the ports that you actually need. Close all others to reduce risk.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="tip-box p-3">
+                            <h5><i class="fas fa-user-shield me-2"></i> Use a Firewall</h5>
+                            <p>A firewall helps control what traffic can reach your server, blocking potential attacks.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7" class="card-img-top" alt="Server security concept">
+            <div class="card-body">
+                <h4 class="card-title">Common Server Vulnerabilities</h4>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Vulnerability</th>
+                                <th>What It Is</th>
+                                <th>How to Fix It</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Default Credentials</td>
+                                <td>Using the username and password that came with the server</td>
+                                <td>Change all default passwords immediately</td>
+                            </tr>
+                            <tr>
+                                <td>Outdated Software</td>
+                                <td>Running old versions of server software with known security problems</td>
+                                <td>Keep all software updated with security patches</td>
+                            </tr>
+                            <tr>
+                                <td>Open Admin Ports</td>
+                                <td>Management interfaces accessible from the internet</td>
+                                <td>Restrict admin access to trusted IP addresses only</td>
+                            </tr>
+                            <tr>
+                                <td>Missing Encryption</td>
+                                <td>Data sent without encryption can be intercepted</td>
+                                <td>Use SSL/TLS encryption for all sensitive communications</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

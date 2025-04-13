@@ -1,0 +1,449 @@
+{% extends "layout.html" %}
+
+{% block title %}Learn About S3 Bucket Security - CyberKidz{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-9 mx-auto">
+        <h1 class="mb-4">Learn About S3 Bucket Security</h1>
+        
+        <div class="alert alert-info mb-4">
+            <h4 class="alert-heading"><i class="fas fa-info-circle me-2"></i> What is an S3 Bucket?</h4>
+            <p>An S3 bucket is like a folder in the cloud where companies store files, pictures, videos, and other data. S3 stands for "Simple Storage Service" and is provided by Amazon Web Services (AWS).</p>
+            <p>Think of an S3 bucket as a big digital storage box on the internet that companies use to keep their files.</p>
+        </div>
+
+        <div class="row mb-5">
+            <div class="col-md-6">
+                <img src="https://images.unsplash.com/photo-1614064548016-0b5c13ca2c85" alt="Cloud storage concept" class="img-fluid rounded shadow mb-3">
+            </div>
+            <div class="col-md-6">
+                <div class="card bg-dark h-100">
+                    <div class="card-body">
+                        <h3 class="card-title">Why is S3 Bucket Security Important?</h3>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item bg-transparent">Companies store important data in S3 buckets</li>
+                            <li class="list-group-item bg-transparent">Insecure buckets can leak private information</li>
+                            <li class="list-group-item bg-transparent">Hackers look for unprotected S3 buckets</li>
+                            <li class="list-group-item bg-transparent">Many data breaches have happened due to misconfigurations</li>
+                            <li class="list-group-item bg-transparent">Even big companies have made these mistakes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-5">
+            <div class="card-header bg-primary">
+                <h3 class="mb-0"><i class="fas fa-cloud me-2"></i> Understanding Cloud Storage</h3>
+            </div>
+            <div class="card-body">
+                <h4>What is Cloud Storage?</h4>
+                <p>Cloud storage means keeping your files on computers in big data centers instead of on your own device. You can access these files from anywhere with an internet connection.</p>
+                
+                <div class="row align-items-center mb-4">
+                    <div class="col-md-7">
+                        <div class="definition-box p-3">
+                            <h5>Benefits of Cloud Storage:</h5>
+                            <ul>
+                                <li><strong>Access from anywhere</strong> - Use your files from any device</li>
+                                <li><strong>No need for big hard drives</strong> - Store huge amounts of data</li>
+                                <li><strong>Automatic backups</strong> - Less chance of losing files</li>
+                                <li><strong>Easy sharing</strong> - Share files with others quickly</li>
+                                <li><strong>Scalable</strong> - Easily add more storage when needed</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-5 text-center">
+                        <i class="fas fa-cloud-upload-alt fa-5x text-primary mb-3"></i>
+                        <h5>Cloud Storage</h5>
+                    </div>
+                </div>
+                
+                <div class="example-box p-3 mt-4">
+                    <h5>Examples of Cloud Storage Services:</h5>
+                    <ul>
+                        <li><strong>Amazon S3</strong> - Used by many companies and websites</li>
+                        <li><strong>Google Drive</strong> - Popular for personal and school use</li>
+                        <li><strong>Dropbox</strong> - Easy file sharing and syncing</li>
+                        <li><strong>Microsoft OneDrive</strong> - Works well with Windows and Office</li>
+                        <li><strong>Apple iCloud</strong> - Used with iPhones, iPads, and Macs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-5">
+            <div class="card-header bg-primary">
+                <h3 class="mb-0"><i class="fas fa-database me-2"></i> What are S3 Buckets?</h3>
+            </div>
+            <div class="card-body">
+                <h4>Amazon S3 Explained Simply</h4>
+                <p>Amazon S3 (Simple Storage Service) is a very popular cloud storage service that many websites and apps use to store their data.</p>
+                
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="definition-box p-3 h-100">
+                            <h5>S3 Bucket Structure:</h5>
+                            <ul>
+                                <li><strong>Bucket</strong> - The main container (like a folder)</li>
+                                <li><strong>Objects</strong> - The files stored in the bucket</li>
+                                <li><strong>Folders</strong> - Help organize objects (files)</li>
+                            </ul>
+                            <p>Each bucket has a unique name across all of Amazon S3, like a website address. For example:</p>
+                            <code>my-company-website-images</code>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="definition-box p-3 h-100">
+                            <h5>Common Uses of S3 Buckets:</h5>
+                            <ul>
+                                <li>Storing website images and videos</li>
+                                <li>App data backups</li>
+                                <li>Storing user uploads (like profile pictures)</li>
+                                <li>Sharing large files</li>
+                                <li>Data archives</li>
+                                <li>Machine learning datasets</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="example-box p-3 mt-4">
+                    <h5>Example: How a Website Uses S3</h5>
+                    <p>When you upload a profile picture to a website:</p>
+                    <ol>
+                        <li>You select and upload your photo</li>
+                        <li>The website saves your photo to an S3 bucket</li>
+                        <li>When someone views your profile, the website gets the image from the S3 bucket</li>
+                        <li>The image is displayed on the page</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-5">
+            <div class="card-header bg-danger text-white">
+                <h3 class="mb-0"><i class="fas fa-exclamation-triangle me-2"></i> S3 Security Problems</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="warning-box p-3 h-100">
+                            <h4><i class="fas fa-unlock me-2"></i> Public Access Settings</h4>
+                            <p>The biggest problem is when S3 buckets are set to "public" by mistake. This means anyone on the internet can see all the files!</p>
+                            <div class="example-box p-3">
+                                <h6>Example: Configuration That Allows Public Access</h6>
+                                <pre><code>{
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::company-data/*"
+    }
+  ]
+}</code></pre>
+                                <p>The <code>"Principal": "*"</code> means "anyone" can access the bucket.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="warning-box p-3 h-100">
+                            <h4><i class="fas fa-user-times me-2"></i> Incorrect Access Control</h4>
+                            <p>Sometimes buckets are set up to let the wrong people access files. This happens when permissions are not set correctly.</p>
+                            <div class="example-box p-3">
+                                <h6>Common Mistake:</h6>
+                                <p>Giving "write" access when only "read" access is needed. This could let people change or delete files.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="warning-box p-3 h-100">
+                            <h4><i class="fas fa-lock-open me-2"></i> Missing Encryption</h4>
+                            <p>Encryption scrambles data so it can't be read if someone gets it without permission. Not enabling encryption is like leaving your diary unlocked.</p>
+                            <div class="example-box p-3">
+                                <h6>Example:</h6>
+                                <p>If medical records are stored without encryption, and someone gets access to the bucket, they can read everyone's private health information.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="warning-box p-3 h-100">
+                            <h4><i class="fas fa-history me-2"></i> No Versioning</h4>
+                            <p>Versioning keeps copies of files each time they change. Without it, you can't recover files if they're accidentally changed or deleted.</p>
+                            <div class="example-box p-3">
+                                <h6>Example:</h6>
+                                <p>If a hacker deletes important files in a bucket without versioning, the files are gone forever.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="alert alert-danger mt-3">
+                    <h4 class="alert-heading"><i class="fas fa-newspaper me-2"></i> Real-World Examples</h4>
+                    <p>Many companies have accidentally exposed data through unsecured S3 buckets:</p>
+                    <ul>
+                        <li>A large company accidentally made customer information public</li>
+                        <li>A photo app exposed users' private photos</li>
+                        <li>A government agency left citizen data accessible to anyone</li>
+                    </ul>
+                    <p>In each case, the data was exposed because someone didn't set up the security correctly.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-5">
+            <div class="card-header bg-primary">
+                <h3 class="mb-0"><i class="fas fa-code me-2"></i> How S3 Configuration Works</h3>
+            </div>
+            <div class="card-body">
+                <p>Let's look at how S3 buckets are configured:</p>
+                
+                <div class="row mb-4">
+                    <div class="col-md-12">
+                        <h5>Example: S3 Bucket Configuration</h5>
+                        <pre><code>// This is a simplified example of an S3 bucket configuration
+{
+  "BucketName": "company-photos",
+  "Region": "us-east-1",
+  
+  // Access settings
+  "PublicAccessBlockConfiguration": {
+    "BlockPublicAcls": true,
+    "IgnorePublicAcls": true,
+    "BlockPublicPolicy": true,
+    "RestrictPublicBuckets": true
+  },
+  
+  // Bucket policy (who can access what)
+  "BucketPolicy": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Principal": {
+          "AWS": "arn:aws:iam::123456789012:user/authorized-user"
+        },
+        "Action": [
+          "s3:GetObject"
+        ],
+        "Resource": "arn:aws:s3:::company-photos/*"
+      }
+    ]
+  },
+  
+  // Security features
+  "ServerSideEncryption": {
+    "Enabled": true,
+    "Type": "AES256"
+  },
+  
+  "Versioning": {
+    "Enabled": true
+  },
+  
+  "Logging": {
+    "Enabled": true,
+    "TargetBucket": "access-logs",
+    "TargetPrefix": "company-photos-logs/"
+  }
+}</code></pre>
+                    </div>
+                </div>
+                
+                <div class="interactive-example" data-example-type="s3-config">
+                    <h5>Try It: Check If This Configuration Is Secure</h5>
+                    <pre><code id="s3-example-input">{
+  "BucketName": "user-photos",
+  "PublicAccessBlock": false,
+  "ObjectACL": "public-read",
+  "Versioning": "Disabled",
+  "ServerSideEncryption": "Disabled",
+  "AccessLogs": "Disabled"
+}</code></pre>
+                    <button class="btn btn-primary run-example mb-3">Check Security</button>
+                    <div class="example-result"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-5">
+            <div class="card-header bg-success">
+                <h3 class="mb-0"><i class="fas fa-shield-alt me-2"></i> How to Secure S3 Buckets</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="tip-box p-3 h-100">
+                            <h4><i class="fas fa-lock me-2"></i> Block Public Access</h4>
+                            <p>Always enable "Block Public Access" settings for S3 buckets. This prevents accidental public exposure.</p>
+                            <div class="example-box p-3">
+                                <p>In the AWS S3 console, select a bucket, go to "Permissions" tab, and set all "Block public access" options to "On".</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="tip-box p-3 h-100">
+                            <h4><i class="fas fa-key me-2"></i> Use Encryption</h4>
+                            <p>Enable server-side encryption for your S3 buckets to protect the data even if someone gets unauthorized access.</p>
+                            <div class="example-box p-3">
+                                <p>In the AWS S3 console, go to the "Properties" tab of your bucket, and enable "Default encryption".</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="tip-box p-3 h-100">
+                            <h4><i class="fas fa-history me-2"></i> Enable Versioning</h4>
+                            <p>Turn on versioning to keep multiple copies of objects. This helps recover from accidental deletions or modifications.</p>
+                            <div class="example-box p-3">
+                                <p>In the AWS S3 console, go to the "Properties" tab of your bucket, and enable "Versioning".</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="tip-box p-3 h-100">
+                            <h4><i class="fas fa-eye me-2"></i> Enable Logging</h4>
+                            <p>Turn on access logging to keep track of who accesses your bucket and what they do.</p>
+                            <div class="example-box p-3">
+                                <p>In the AWS S3 console, go to the "Properties" tab of your bucket, and enable "Server access logging".</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="tip-box p-3 h-100">
+                            <h4><i class="fas fa-user-lock me-2"></i> Use the Principle of Least Privilege</h4>
+                            <p>Only give users and applications the minimum access they need to do their jobs. Don't give everyone full access.</p>
+                            <div class="example-box p-3">
+                                <p>If someone only needs to read files, don't give them permission to write or delete files.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="tip-box p-3 h-100">
+                            <h4><i class="fas fa-search me-2"></i> Regularly Audit Your Buckets</h4>
+                            <p>Check your S3 buckets regularly to make sure they're configured correctly. Use tools that scan for misconfigurations.</p>
+                            <div class="example-box p-3">
+                                <p>AWS provides tools like Trusted Advisor and S3 Storage Lens to help with this.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-5">
+            <div class="card-header bg-primary text-white">
+                <h3 class="mb-0"><i class="fas fa-graduation-cap me-2"></i> S3 Bucket Security Quiz</h3>
+            </div>
+            <div class="card-body">
+                <p>Test what you've learned about S3 bucket security with this quiz!</p>
+                
+                <form class="quiz-form" data-quiz-id="s3" data-correct-answers='{"q1": "a", "q2": "c", "q3": "b", "q4": "a", "q5": "b"}'>
+                    <div class="quiz-question mb-4">
+                        <p><strong>1. What is an S3 bucket?</strong></p>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="q1" id="q1a" value="a">
+                            <label class="form-check-label" for="q1a">A cloud storage container provided by Amazon Web Services</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="q1" id="q1b" value="b">
+                            <label class="form-check-label" for="q1b">A physical bucket where servers are stored</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="q1" id="q1c" value="c">
+                            <label class="form-check-label" for="q1c">A type of database</label>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question mb-4">
+                        <p><strong>2. What is the biggest security risk with S3 buckets?</strong></p>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="q2" id="q2a" value="a">
+                            <label class="form-check-label" for="q2a">They cost too much money</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="q2" id="q2b" value="b">
+                            <label class="form-check-label" for="q2b">They can get too full</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="q2" id="q2c" value="c">
+                            <label class="form-check-label" for="q2c">They can be accidentally set to public access</label>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question mb-4">
+                        <p><strong>3. What is encryption in S3 buckets?</strong></p>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="q3" id="q3a" value="a">
+                            <label class="form-check-label" for="q3a">Making files smaller to save space</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="q3" id="q3b" value="b">
+                            <label class="form-check-label" for="q3b">Scrambling data so it can't be read without the right key</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="q3" id="q3c" value="c">
+                            <label class="form-check-label" for="q3c">Hiding file names so no one can see them</label>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question mb-4">
+                        <p><strong>4. What is versioning in S3 buckets?</strong></p>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="q4" id="q4a" value="a">
+                            <label class="form-check-label" for="q4a">Keeping copies of files each time they change</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="q4" id="q4b" value="b">
+                            <label class="form-check-label" for="q4b">Updating the S3 software version</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="q4" id="q4c" value="c">
+                            <label class="form-check-label" for="q4c">Naming each bucket with version numbers</label>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question mb-4">
+                        <p><strong>5. Why should you regularly audit your S3 buckets?</strong></p>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="q5" id="q5a" value="a">
+                            <label class="form-check-label" for="q5a">To check how much storage space is left</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="q5" id="q5b" value="b">
+                            <label class="form-check-label" for="q5b">To make sure they're still configured securely</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="q5" id="q5c" value="c">
+                            <label class="form-check-label" for="q5c">To count how many files you have</label>
+                        </div>
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary">Check Answers</button>
+                    </div>
+                </form>
+                
+                <div id="quiz-result-s3" class="mt-4"></div>
+                <div id="quiz-feedback-s3" class="mt-4"></div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-between mb-5">
+            <a href="/education/exposed-apis" class="btn btn-outline-primary">
+                <i class="fas fa-arrow-left me-2"></i> Previous: Exposed APIs
+            </a>
+            <a href="/education" class="btn btn-primary">
+                Back to All Topics <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
